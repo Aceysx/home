@@ -1,6 +1,11 @@
 buildscript {
     repositories {
-        mavenCentral()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
     }
 }
 
@@ -15,7 +20,11 @@ repositories {
     mavenCentral()
     jcenter()
 }
-
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.acey.Application'
+    }
+}
 sourceCompatibility = 1.8
 
 dependencies {
