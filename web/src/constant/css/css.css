@@ -1,0 +1,8 @@
+img{max-width: 100%;display: block;margin: 10px}
+blockquote {
+    color: #666;
+    margin: 0;
+    padding: 3px 20px;
+    border-left: 0.5em #FFFF00 solid;
+    background-color: #FAFAFA;
+}

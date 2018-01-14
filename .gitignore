@@ -7,7 +7,10 @@ out
 .gradle
 # testing
 /coverage
-
+node_modules
+backend/.idea/workspace.xml
+web/.idea/workspace.xml
+.idea
 # production
 /build
 
