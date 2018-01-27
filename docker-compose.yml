@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mysql:
+      image: mysql:5.7
+      container_name: home/mysql
+      ports:
+        - 3306:3306
+      environment:
+        - LANG=C.UTF-8
+        - TERM=dumb
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=home
+        - MYSQL_PASSWORD=root
+        - MYSQL_USER=root
+      networks:
+        main:
+          aliases:
+            - home/mysql
+web:
+    image: node:8-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - /web:/var/app
+    command: sh -c "cd /var/app && npm start"
+    networks:
+      main:
+        aliases:
+          - web-api
+networks:
+  main:

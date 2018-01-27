@@ -5,6 +5,7 @@
 *.iml
 out
 .gradle
+build
 # testing
 /coverage
 node_modules
@@ -13,7 +14,7 @@ web/.idea/workspace.xml
 .idea
 # production
 /build
-
+*/*.xml
 # misc
 .DS_Store
 .env.local
