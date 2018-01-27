@@ -14,8 +14,10 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    @Column(length=10000)
     private String content;
     private Date time;
+    @Column(length=10000)
     private String headImg;
     @JsonIgnoreProperties(value = { "blogs" })
     @ManyToMany(cascade = CascadeType.ALL)
