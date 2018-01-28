@@ -1,11 +1,7 @@
 import React from 'react'
-import Button from 'material-ui/Button'
-import {Add} from 'material-ui-icons'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import BlogGeneral from './blog-general'
-import blue from 'material-ui/es/colors/blue'
-import orange from 'material-ui/es/colors/orange'
 import * as BlogActions from '../../actions/blog'
 import Header from '../common/blog/header'
 
@@ -18,14 +14,11 @@ class BlogIndex extends React.Component {
     const blogGenerals = this.props.blogGenerals.map((blog, key) => <BlogGeneral key={key} blog={blog} />)
 
     return (
-      <div>
-        <Header title='最新更新'/>
+      <div className='bg-color'>
+        <Header title='最新更新' />
         <div>
           {blogGenerals}
         </div>
-        <Button fab aria-label='add' style={{position: 'fixed', right: 50, bottom: 50, color: orange[900], background: blue[300]}}>
-          <Add />
-        </Button>
       </div>
     )
   }

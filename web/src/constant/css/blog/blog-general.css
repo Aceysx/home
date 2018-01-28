@@ -1,0 +1,13 @@
+.blog-general-time{
+    color: #757575;
+    font-weight: bold;
+    float: right;
+    font-size: 13px;
+}
+.blog-general-card{
+    max-width: 65%;
+    margin: 0 auto 25px;
+}
+.blog-general-media{
+    height: 200px
+}

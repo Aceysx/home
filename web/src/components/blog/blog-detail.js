@@ -5,14 +5,11 @@ import * as BlogActions from '../../actions/blog'
 import {connect} from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import PreBar from '../common/pre-bar'
-import '../../constant/css/css.css'
-import {Avatar, Chip} from 'material-ui'
-import * as Color from '../../constant/color'
+import Paper from 'material-ui/es/Paper/Paper'
+import '../../constant/css/blog/blog-detail.css'
+import LinearProgress from 'material-ui/es/Progress/LinearProgress'
+import Tag from '../common/blog/Tag'
 
-const contentStyle = {
-  width: '80%',
-  margin: '0 auto'
-}
 class BlogDetail extends React.Component {
   componentDidMount () {
     const pattern = new UrlPattern('/blog/:id')
@@ -22,22 +19,16 @@ class BlogDetail extends React.Component {
 
   render () {
     const blog = this.props.blog
-    const tags = blog.tags.map((tag) =>
-      <Chip key={tag.id} style={{margin: '5px 10px 0 0', color: 'white', fontWeight: 'bold'}}
-        avatar={<Avatar
-          src={tag.headImg} />}
-        label={tag.content}
-          />
-      )
-
-    return <div>
+    const tags = blog.tags.map((tag) => <Tag {...tag} />)
+    return <div className='bg-color'>
       <PreBar />
-      <div style={contentStyle} align='center'>
+      <Paper className='bg-color-white blog-content'>
         <h1 style={{fontSize: 40}}>{blog.title}</h1>
-        <p style={{float: 'right', color: Color.GREP,fontWeight:'bold'}}>{new Date(blog.time).toDateString()}</p>
+        <p className='blog-detail-time'>{new Date(blog.time).toDateString()}</p>
         <p>{tags}</p>
+        <LinearProgress mode='buffer' value={100} />
         <ReactMarkdown source={blog.content} />
-      </div>
+      </Paper>
     </div>
   }
 }

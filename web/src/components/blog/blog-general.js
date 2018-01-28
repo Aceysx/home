@@ -1,11 +1,12 @@
 import React from 'react'
 import {Avatar, Card, CardContent, CardMedia, Chip, Typography} from 'material-ui'
 import {withRouter, Link} from 'react-router-dom'
-import grey from 'material-ui/es/colors/grey'
+import '../../constant/css/blog/blog-general.css'
+import Tag from '../common/blog/Tag'
 
 const styles = {
   card: {
-    maxWidth: '80%',
+    maxWidth: '65%',
     margin: '0 auto',
     marginBottom: 25
   },
@@ -17,18 +18,11 @@ const styles = {
 class BlogGeneral extends React.Component {
   render () {
     const blog = this.props.blog
-    const tags = blog.tags.map((tag, key) =>
-      <Chip key={key} style={{margin: '5px 10px 0 0', background: `${tag.color}`, color: 'white', fontWeight: 'bold'}}
-        avatar={<Avatar
-          src={tag.headImg} />}
-        label={tag.content}
-            />
-        )
+    const tags = blog.tags.map((tag) => <Tag {...tag} />)
 
-    return <Card style={styles.card}>
-      <Link to={`/blog/${blog.id}`} >
-        <CardMedia
-          style={styles.media}
+    return <Card className='blog-general-card'>
+      <Link to={`/blog/${blog.id}`}>
+        <CardMedia className='blog-general-media'
           image={blog.headImg} />
       </Link>
       <CardContent style={{padding: '0 10'}}>
@@ -36,7 +30,7 @@ class BlogGeneral extends React.Component {
           <span style={{fontSize: '20px', fontWeight: 'bold'}}>
             <Link to={`/blog/${blog.id}`} style={{textDecoration: 'none', color: '#2196F3'}}> {blog.title} </Link>
           </span>
-          <span style={{fontSize: 13, float: 'right', color: grey[600]}}>{new Date(blog.time).toLocaleDateString()}</span>
+          <span className='blog-general-time'>{new Date(blog.time).toDateString()}</span>
         </Typography>
         <Typography style={{display: 'flex', flexWrap: 'wrap'}}>
           {tags}
