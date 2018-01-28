@@ -21,7 +21,7 @@ class BlogGeneral extends React.Component {
     const tags = blog.tags.map((tag) => <Tag {...tag} />)
 
     return <Card className='blog-general-card'>
-      <Link to={`/blog/${blog.id}`}>
+      <Link to={`/blogs/${blog.id}`}>
         <CardMedia className='blog-general-media'
           image={blog.headImg} />
       </Link>
