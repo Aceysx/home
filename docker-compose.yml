@@ -7,7 +7,7 @@ services:
         - 8080:8080
       volumes:
         - ./backend:/home/app/backend
-      command: sh -c "cd /home/app/backend && ./gradlew bootRun"
+      command: sh -c "cd /home/app/backend && java -jar build/libs/backend.jar"
       networks:
         main:
           aliases:
