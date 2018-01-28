@@ -1,5 +1,17 @@
 version: '2'
 services:
+  homeBackend:
+      image: java:8
+      container_name: homeBackend
+      ports:
+        - 8080:8080
+      volumes:
+        - ./backend:/home/app/backend
+      command: sh -c "cd /home/app/backend && ./gradlew bootRun"
+      networks:
+        main:
+          aliases:
+            - homeBackend
   homeMysql:
       image: mysql:5.7
       container_name: homeMysql
