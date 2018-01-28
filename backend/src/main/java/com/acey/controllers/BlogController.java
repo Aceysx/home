@@ -6,10 +6,7 @@ import com.acey.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +29,11 @@ public class BlogController {
     public ResponseEntity getBlog(@PathVariable Long id) {
         Blog blog = blogRepository.findOne(id);
         return new ResponseEntity(blog, HttpStatus.OK);
+    }
+
+    @PostMapping("/blogs")
+    public ResponseEntity addBlog(@RequestBody Blog blog) {
+        blogRepository.save(blog);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }

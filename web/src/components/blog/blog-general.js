@@ -28,7 +28,7 @@ class BlogGeneral extends React.Component {
       <CardContent style={{padding: '0 10'}}>
         <Typography type='headline'>
           <span style={{fontSize: '20px', fontWeight: 'bold'}}>
-            <Link to={`/blog/${blog.id}`} style={{textDecoration: 'none', color: '#2196F3'}}> {blog.title} </Link>
+            <Link to={`/blogs/${blog.id}`} style={{textDecoration: 'none', color: '#2196F3'}}> {blog.title} </Link>
           </span>
           <span className='blog-general-time'>{new Date(blog.time).toDateString()}</span>
         </Typography>

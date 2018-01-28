@@ -11,8 +11,6 @@ services:
         - MYSQL_DATABASE=home
         - MYSQL_PASSWORD=root
         - MYSQL_USER=root
-      volumes:
-        - /data/mysql:/var/lib/mysql
       networks:
         main:
           aliases:

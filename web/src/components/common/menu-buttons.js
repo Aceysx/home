@@ -16,7 +16,7 @@ class MenuButtons extends React.Component {
     return <div>
       <Button className={classes.button} raised
         style={{backgroundColor: Color.BLUE, color: Color.WHITE, fontWeight: 'bold'}}
-        href='/#/blog'>
+        href='/#/blogs'>
                 BLOG
             </Button>
       <Button className={classes.button} raised style={{backgroundColor: Color.YELLOW, color: Color.WHITE, fontWeight: 'bold'}}>

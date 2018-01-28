@@ -31,3 +31,15 @@ export const getBlog = (id) => {
     })()
   }
 }
+
+export const addBlog = (blog) => {
+  console.log(blog)
+  return dispatch => {
+    (async () => {
+      const res = await request.post('./api/blogs',blog)
+      if (res.status === HTTP_CODE.CREATED) {
+        console.log('success')
+      }
+    })()
+  }
+}
