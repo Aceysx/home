@@ -12,7 +12,7 @@ import Tag from '../common/blog/Tag'
 
 class BlogDetail extends React.Component {
   componentDidMount () {
-    const pattern = new UrlPattern('/blog/:id')
+    const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
   }

@@ -14,7 +14,6 @@ class BlogAdd extends React.Component {
   }
 
   submit () {
-      console.log(this.state,'this.state')
     this.props.addBlog(this.state)
   }
   render () {

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -33,6 +34,7 @@ public class BlogController {
 
     @PostMapping("/blogs")
     public ResponseEntity addBlog(@RequestBody Blog blog) {
+        blog.setTime(new Date());
         blogRepository.save(blog);
         return new ResponseEntity(HttpStatus.CREATED);
     }
