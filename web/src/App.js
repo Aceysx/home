@@ -14,7 +14,7 @@ class App extends Component {
         <Layout>
           <Route exact path='/' component={Index} />
           <Route exact path='/blogs' component={BlogIndex} />
-          <Route exact path='/blogs/manage' component={BlogAdd} />
+          <Route exact path='/manage/blogs' component={BlogAdd} />
           <Route exact path='/blogs/:id' component={BlogDetail} />
           <Route exact path='/time' component={TimeIndex} />
         </Layout>
