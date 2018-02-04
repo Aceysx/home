@@ -14,9 +14,9 @@ public class Tag {
     private Long id;
     private String content;
     private Date time;
-    private String headImg;
+    private String bgColor;
     @JsonIgnoreProperties(value = { "tags" })
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags",cascade = CascadeType.MERGE)
     private List<Blog> blogs;
 
     public List<Blog> getBlogs() {
@@ -51,11 +51,11 @@ public class Tag {
         this.time = time;
     }
 
-    public String getHeadImg() {
-        return headImg;
+    public String getBgColor() {
+        return bgColor;
     }
 
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg;
+    public void setBgColor(String bgColor) {
+        this.bgColor = bgColor;
     }
 }

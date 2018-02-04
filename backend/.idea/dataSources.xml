@@ -4,6 +4,7 @@
     <data-source source="LOCAL" name="home@localhost" uuid="b34ee91a-15ae-43e1-9e81-554664b3e51f">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3310/home</jdbc-url>
       <driver-properties>
@@ -18,6 +19,7 @@
     <data-source source="LOCAL" name="home@116.196.117.179" uuid="d1386b3a-5298-48cd-b512-692970486ce4">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://116.196.117.179:3310/home</jdbc-url>
       <driver-properties>

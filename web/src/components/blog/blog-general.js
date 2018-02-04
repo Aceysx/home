@@ -1,30 +1,24 @@
 import React from 'react'
-import {Avatar, Card, CardContent, CardMedia, Chip, Typography} from 'material-ui'
-import {withRouter, Link} from 'react-router-dom'
-import '../../constant/css/blog/blog-general.css'
+import {Card, CardContent, CardMedia, Typography} from 'material-ui'
+import {Link, withRouter} from 'react-router-dom'
 import Tag from '../common/blog/Tag'
-
-const styles = {
-  card: {
-    maxWidth: '65%',
-    margin: '0 auto',
-    marginBottom: 25
-  },
-  media: {
-    height: 200
-  }
-}
+import ScrollToTop from 'react-scroll-up'
+import '../../constant/css/blog/blog-general.css'
+import '../../constant/css/common.css'
 
 class BlogGeneral extends React.Component {
   render () {
     const blog = this.props.blog
-    const tags = blog.tags.map((tag) => <Tag {...tag} />)
+    const tags = blog.tags.map((tag, index) => <Tag key={index} {...tag} />)
 
-    return <Card className='blog-general-card'>
+    return <div><Card className='blog-general-card'>
+
       <Link to={`/blogs/${blog.id}`}>
-        <CardMedia className='blog-general-media'
+        <CardMedia
+          className='blog-general-media'
           image={blog.headImg} />
       </Link>
+
       <CardContent style={{padding: '0 10'}}>
         <Typography type='headline'>
           <span style={{fontSize: '20px', fontWeight: 'bold'}}>
@@ -37,6 +31,10 @@ class BlogGeneral extends React.Component {
         </Typography>
       </CardContent>
     </Card>
+      <ScrollToTop showUnder={160}>
+        <span>Top</span>
+      </ScrollToTop>
+    </div>
   }
 }
 
