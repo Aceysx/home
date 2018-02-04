@@ -8,7 +8,7 @@ out
 build
 # testing
 /coverage
-node_modules
+#node_modules
 backend/.idea/workspace.xml
 web/.idea/workspace.xml
 .idea
