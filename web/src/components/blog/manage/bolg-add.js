@@ -2,7 +2,8 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as BlogActions from '../../../actions/blog'
-import {Checkbox, FormControlLabel} from 'material-ui'
+import {Checkbox} from "material-ui/es/index";
+import {FormControlLabel} from "material-ui/es/Form/index";
 
 class BlogAdd extends React.Component {
   constructor () {

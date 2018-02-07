@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ccxt": "^1.10.1033",
     "isomorphic-fetch": "^2.2.1",
     "material-ui": "^1.0.0-beta.26",
     "material-ui-icons": "^1.0.0-beta.17",
@@ -16,7 +17,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
-      "react-scroll-up": "^1.3.3",
+    "react-scroll-up": "^1.3.3",
     "react-swipeable-views": "^0.12.12",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
@@ -32,7 +33,7 @@
   },
   "scripts": {
     "start": "REACT_APP_ENV=staging PORT=3000 react-app-rewired start",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "mkdir -p ../../backend/src/main/resources/static/homeworkQuiz/ && rm -rf ../../backend/src/main/resources/static/homeworkQuiz/ && cp -R ./build/ ../../backend/src/main/resources/static/homeworkQuiz/"

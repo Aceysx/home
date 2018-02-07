@@ -1,8 +1,8 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-import { Button, Toolbar, Typography} from 'material-ui'
 import ArrowBack from 'material-ui-icons/ArrowBack'
 import '../../constant/css/common.css'
+import {Button, Toolbar, Typography} from "material-ui/es/index";
 
 class PreBar extends React.Component {
   render () {

@@ -1,15 +1,7 @@
 import React from 'react'
-import {Button} from 'material-ui'
 import * as Color from '../../constant/color'
-import { withStyles } from 'material-ui/styles'
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit
-  },
-  input: {
-    display: 'none'
-  }
-})
+import {Button} from "material-ui/es/index";
+
 class MenuButtons extends React.Component {
   render () {
     const { classes } = this.props
@@ -32,4 +24,4 @@ class MenuButtons extends React.Component {
   }
 }
 
-export default withStyles(styles)(MenuButtons)
+export default (MenuButtons)

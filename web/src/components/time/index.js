@@ -1,17 +1,7 @@
 import React from 'react'
-import {withStyles} from 'material-ui/styles'
-import Card, {CardContent, CardMedia} from 'material-ui/Card'
-import Typography from 'material-ui/Typography'
+import {Card, Typography} from "material-ui/es/index";
+import {CardContent, CardMedia} from "material-ui/es/Card/index";
 
-const styles = {
-  card: {
-    maxWidth: '80%',
-    margin: '0 auto'
-  },
-  media: {
-    height: 200
-  }
-}
 
 function TimeIndex (props) {
   const { classes } = props
@@ -39,4 +29,4 @@ function TimeIndex (props) {
   )
 }
 
-export default withStyles(styles)(TimeIndex)
+export default (TimeIndex)

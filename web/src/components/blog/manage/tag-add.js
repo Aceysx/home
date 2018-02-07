@@ -2,8 +2,8 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as BlogActions from '../../../actions/blog'
-import {Checkbox, FormControlLabel, Input} from 'material-ui'
 import Tag from '../../common/blog/Tag'
+import {Input} from "material-ui/es/index";
 
 class TagAdd extends React.Component {
   constructor () {

@@ -1,8 +1,8 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-import {AppBar, Button, Toolbar, Typography} from 'material-ui'
 import * as Color from '../../constant/color'
 import MenuIcon from 'material-ui-icons/Menu'
+import {AppBar, Button, Toolbar, Typography} from "material-ui/es/index";
 
 class APPBar extends React.Component {
   render () {

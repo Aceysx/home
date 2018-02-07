@@ -1,10 +1,11 @@
 import React from 'react'
-import {Card, CardContent, CardMedia, Typography} from 'material-ui'
 import {Link, withRouter} from 'react-router-dom'
 import Tag from '../common/blog/Tag'
 import ScrollToTop from 'react-scroll-up'
 import '../../constant/css/blog/blog-general.css'
 import '../../constant/css/common.css'
+import {Card, Typography} from "material-ui/es/index";
+import {CardContent, CardMedia} from "material-ui/es/Card/index";
 
 class BlogGeneral extends React.Component {
   render () {
