@@ -36,7 +36,7 @@
     "build": "react-app-rewired build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "mkdir -p ../../backend/src/main/resources/static/homeworkQuiz/ && rm -rf ../../backend/src/main/resources/static/homeworkQuiz/ && cp -R ./build/ ../../backend/src/main/resources/static/homeworkQuiz/"
+    "deploy": "mkdir -p ../backend/src/main/resources/static/ && rm -rf ../backend/src/main/resources/static/ && cp -R ./build/ ../backend/src/main/resources/static/"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.0",
