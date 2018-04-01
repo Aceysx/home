@@ -4,11 +4,16 @@
 #/node_modules
 *.iml
 out
+.idea
+web/node_modules
 .gradle
 build
 # testing
 /coverage
-#node_modules
+*.xml
+.idea/*
+package-lock.json
+node_modules
 backend/.idea/workspace.xml
 web/.idea/workspace.xml
 .idea
