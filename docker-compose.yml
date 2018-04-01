@@ -12,21 +12,7 @@ services:
         main:
           aliases:
             - homeBackend
-  homeMysql:
-      image: mysql:5.7
-      container_name: homeMysql
-      ports:
-        - 3310:3306
-      environment:
-        - LANG=C.UTF-8
-        - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_DATABASE=home
-        - MYSQL_PASSWORD=root
-        - MYSQL_USER=root
-      networks:
-        main:
-          aliases:
-            - homeMysql
+  
   homeWeb:
       image: node:8-alpine
       container_name: homeWeb
@@ -35,6 +21,8 @@ services:
       volumes:
         - ./web:/home/app
       command: sh -c "cd /home/app && npm start"
+      link:
+        homeBackend
       networks:
         main:
           aliases:
