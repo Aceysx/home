@@ -21,8 +21,8 @@ services:
       volumes:
         - ./web:/home/app
       command: sh -c "cd /home/app && npm i && npm start"
-      link:
-        homeBackend
+      links:
+        - homeBackend
       networks:
         main:
           aliases:
