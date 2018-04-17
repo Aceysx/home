@@ -5,7 +5,7 @@ import APPBar from '../app-bar'
 const Header = (props) => {
   const bgStyle = {
     width: '100%',
-    height: 300,
+    height: props.height || 50,
     backgroundImage: `url(${BackgroundImage})`,
     backgroundSize: '100%',
     marginBottom: 50

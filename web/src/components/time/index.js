@@ -1,32 +1,20 @@
 import React from 'react'
-import {Card, Typography} from "material-ui/es/index";
-import {CardContent, CardMedia} from "material-ui/es/Card/index";
+import Header from '../common/blog/header'
+import Paper from 'material-ui/Paper';
 
+class TimeIndex extends React.Component {
 
-function TimeIndex (props) {
-  const { classes } = props
-  return (
-    <div>
-      <Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image='http://www.sdklty.com/d/file/2015/11/27/2123f7686d354b4d1b67b99a7f657747.jpg'
-          title='Contemplative Reptile'
-                />
-        <CardContent>
-          <Typography type='headline' component='h2'>
-                        Lizard
-                    </Typography>
-          <Typography component='p'>
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    </Typography>
+  render(){
+    return <div>
 
-        </CardContent>
-
-      </Card>
-
-    </div>
-  )
+      <Header height='50'/>
+      <div style={{margin:'0 auto'}}>
+      <Paper>
+        asdasda
+      </Paper>
+      </div>
+      </div>
+  }
 }
 
 export default (TimeIndex)
