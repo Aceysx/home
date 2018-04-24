@@ -20,7 +20,7 @@ public class Blog {
     @Column(length=10000)
     private String headImg;
     @JsonIgnoreProperties(value = { "blogs" })
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "t_blog_tag",
             joinColumns = {@JoinColumn(name = "blog_id",referencedColumnName = "id")},

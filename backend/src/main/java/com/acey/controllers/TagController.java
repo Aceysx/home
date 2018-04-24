@@ -1,7 +1,9 @@
 package com.acey.controllers;
 
 
+import com.acey.entities.Blog;
 import com.acey.entities.Tag;
+import com.acey.repositories.BlogRepository;
 import com.acey.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,8 @@ import java.util.List;
 public class TagController {
     @Autowired
     private TagRepository tagRepository;
+    @Autowired
+    private BlogRepository blogRepository;
 
     @GetMapping("/tags")
     public ResponseEntity getTags() {
@@ -28,6 +32,14 @@ public class TagController {
         tag.setTime(new Date());
         tagRepository.save(tag);
         return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/tags/{id}")
+    public ResponseEntity getTagById(@PathVariable Long id) {
+        if (id == 0) {
+            return new ResponseEntity(blogRepository.findAll(), HttpStatus.OK);
+        }
+        return new ResponseEntity(tagRepository.findById(id).getBlogs(), HttpStatus.OK);
     }
 
 }

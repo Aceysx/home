@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/blogs")
 public class BlogController {
 
     @Autowired
@@ -20,22 +20,27 @@ public class BlogController {
     @Autowired
     private TagRepository tagRepository;
 
-    @GetMapping("/blogs")
+    @GetMapping("")
     public ResponseEntity getBlogs() {
         List<Blog> blogs = blogRepository.findAll();
         return new ResponseEntity(blogs, HttpStatus.OK);
     }
 
-    @GetMapping("/blogs/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity getBlog(@PathVariable Long id) {
         Blog blog = blogRepository.findOne(id);
         return new ResponseEntity(blog, HttpStatus.OK);
     }
 
-    @PostMapping("/blogs")
+    @PostMapping("")
     public ResponseEntity addBlog(@RequestBody Blog blog) {
         blog.setTime(new Date());
         blogRepository.save(blog);
         return new ResponseEntity(HttpStatus.CREATED);
     }
+
+//    @GetMapping("/{id}")
+//    public ResponseEntity getBlogsByTagId(@PathVariable Long id) {
+//        return new ResponseEntity(blogRepository.findBlogsByTagId(id), HttpStatus.OK);
+//    }
 }

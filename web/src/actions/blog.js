@@ -69,3 +69,14 @@ export const addTag = (tag) => {
   }
 }
 
+
+export const getBlogGeneralsByTagId = (id) => {
+  return dispatch => {
+    (async () => {
+      const res = await request.get('./api/tags/'+id)
+      if(res.status === HTTP_CODE.OK){}
+      dispatch(refreshBlogGenerals(res.body))
+    })()
+  }
+}
+
