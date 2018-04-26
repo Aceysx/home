@@ -4,6 +4,10 @@ import com.acey.entities.Blog;
 import com.acey.repositories.BlogRepository;
 import com.acey.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +25,11 @@ public class BlogController {
     private TagRepository tagRepository;
 
     @GetMapping("")
-    public ResponseEntity getBlogs() {
-        List<Blog> blogs = blogRepository.findAll();
+    public ResponseEntity getBlogs(@RequestParam(value = "page", defaultValue = "0") Integer page,
+                                   @RequestParam(value = "size", defaultValue = "5") Integer size) {
+        Sort sort = new Sort(Sort.Direction.DESC, "time");
+        Pageable pageable = new PageRequest(0, size * (page + 1), sort);
+        Page<Blog> blogs = blogRepository.findAll(pageable);
         return new ResponseEntity(blogs, HttpStatus.OK);
     }
 

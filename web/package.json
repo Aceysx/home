@@ -5,7 +5,7 @@
   "dependencies": {
     "ccxt": "^1.10.1033",
     "isomorphic-fetch": "^2.2.1",
-    "material-ui": "^1.0.0-beta.26",
+    "material-ui": "^1.0.0-beta.43",
     "material-ui-icons": "^1.0.0-beta.17",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.0",
