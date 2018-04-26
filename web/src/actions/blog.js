@@ -15,7 +15,7 @@ export const refreshTags = tags => ({
   tags
 })
 
-export const getBlogGenerals = (page, callback) => {
+export const getBlogGenerals = (page,callback) => {
   return dispatch => {
     (async () => {
       const res = await request.get(`./api/blogs?page=` + page)
@@ -71,14 +71,12 @@ export const addTag = (tag) => {
 }
 
 
-export const getBlogGeneralsByTagId = (id, page, callback) => {
+export const getBlogGeneralsByTagId = (id) => {
   return dispatch => {
     (async () => {
-      const res = await request.get('./api/tags/' + id + "?page=" + page)
-      if (res.status === HTTP_CODE.OK) {
-        callback(res.body.content.length === res.body.totalElements)
-        dispatch(refreshBlogGenerals(res.body.content))
-      }
+      const res = await request.get('./api/tags/' + id)
+      if (res.status === HTTP_CODE.OK) { }
+      dispatch(refreshBlogGenerals(res.body))
     })()
   }
 }

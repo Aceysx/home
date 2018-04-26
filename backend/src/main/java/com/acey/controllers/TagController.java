@@ -6,10 +6,6 @@ import com.acey.entities.Tag;
 import com.acey.repositories.BlogRepository;
 import com.acey.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +35,8 @@ public class TagController {
     }
 
     @GetMapping("/tags/{id}")
-    public ResponseEntity getTagById(@PathVariable Long id, @RequestParam(value = "page", defaultValue = "0") Integer page,
-                                     @RequestParam(value = "size", defaultValue = "5") Integer size) {
-        Sort sort = new Sort(Sort.Direction.DESC, "time");
-        Pageable pageable = new PageRequest(0, size * (page + 1), sort);
-        if (id == 0) {
-            return new ResponseEntity(blogRepository.findAll(pageable), HttpStatus.OK);
-        }
+    public ResponseEntity getTagById(@PathVariable Long id) {
         return new ResponseEntity(tagRepository.findById(id).getBlogs(), HttpStatus.OK);
     }
+
 }

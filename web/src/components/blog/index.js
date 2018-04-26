@@ -29,10 +29,12 @@ class BlogIndex extends React.Component {
   switchTag = (defaultTagId) => {
 
     this.setState({ defaultTagId, page: 0 },
-      () => this.props.getBlogGeneralsByTagId(defaultTagId, this.state.page,
-        (isScrollOver) => {
+      this.state.defaultTagId === 0 ?
+        () => this.props.getBlogGenerals(this.state.page, (isScrollOver) => {
           this.setState({ isLoading: false, page: this.state.page + 1, isScrollOver })
-        }))
+        })
+        :
+        () => this.props.getBlogGeneralsByTagId(defaultTagId))
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll.bind(this));
@@ -89,12 +91,6 @@ class BlogIndex extends React.Component {
         {
           this.state.isScrollOver ? '' :
             this.state.isLoading ?
-              // <RefreshIndicator
-              //   size={50}
-              //   left={70}
-              //   top={0}
-              //   loadingColor="#FF9800"
-              //   status="loading" />
               <LinearProgress mode='buffer' value={100} /> : ''
         }
       </div>
@@ -109,7 +105,7 @@ const mapStateToProps = ({ blogGenerals, tags }) => ({
 const mapDispatchToProps = dispatch => ({
   getBlogGenerals: (page, callback) => dispatch(BlogActions.getBlogGenerals(page, callback)),
   getTags: () => dispatch(BlogActions.getTags()),
-  getBlogGeneralsByTagId: (id, page, callback) => dispatch(BlogActions.getBlogGeneralsByTagId(id,page,callback))
+  getBlogGeneralsByTagId: (id) => dispatch(BlogActions.getBlogGeneralsByTagId(id))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BlogIndex))
