@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a89fdb-72bc-40e6-8834-b0ae88e01808" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acey/controllers/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acey/controllers/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/actions/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/actions/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/blog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/blog/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -45,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/controllers/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+            <state relative-caret-position="309">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TagController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            <state relative-caret-position="478">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -666,8 +661,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/acey/entities/Blog.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acey/repositories/BlogRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acey/repositories/TagRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acey/controllers/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java" />
       </list>
     </option>
   </component>
@@ -875,7 +870,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39811066" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39811066" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" weight="0.3298969" />
       <window_info anchor="bottom" id="Messages" order="7" />
@@ -1280,23 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/repositories/TagRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/entities/Blog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1313,8 +1291,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/controllers/BlogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+        <state relative-caret-position="309">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/repositories/TagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acey/controllers/TagController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
