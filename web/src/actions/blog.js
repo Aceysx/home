@@ -26,12 +26,13 @@ export const getBlogGenerals = (page,callback) => {
     })()
   }
 }
-export const getBlog = (id) => {
+export const getBlog = (id, callback) => {
   return dispatch => {
     (async () => {
       const res = await request.get('./api/blogs/' + id)
       if (res.status === HTTP_CODE.OK) {
         dispatch(refreshBlogDetail(res.body))
+        callback(res.body)
       }
     })()
   }
@@ -54,6 +55,16 @@ export const addBlog = (blog) => {
       const res = await request.post('./api/blogs', blog)
       if (res.status === HTTP_CODE.CREATED) {
         console.log('success')
+      }
+    })()
+  }
+}
+export const updateBlog = (blog) => {
+  return dispatch => {
+    (async () => {
+      const res = await request.update('./api/blogs', blog)
+      if (res.status === HTTP_CODE.CREATED) {
+        alert('success')
       }
     })()
   }

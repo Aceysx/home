@@ -46,6 +46,12 @@ public class BlogController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
+    @PutMapping("")
+    public ResponseEntity updateBlog(@RequestBody Blog blog) {
+        blogRepository.save(blog);
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
+
 //    @GetMapping("/{id}")
 //    public ResponseEntity getBlogsByTagId(@PathVariable Long id) {
 //        return new ResponseEntity(blogRepository.findBlogsByTagId(id), HttpStatus.OK);
