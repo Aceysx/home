@@ -1,0 +1,11 @@
+.blog-content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 50px;
+}
+
+.blog-detail-time{
+    float: right;
+    color: #757575;
+    font-weight: bold
+}
