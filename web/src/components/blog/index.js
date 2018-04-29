@@ -24,21 +24,24 @@ class BlogIndex extends React.Component {
     })
     this.props.getTags()
     window.addEventListener('scroll', this.handleScroll.bind(this));
-
   }
-  switchTag = (defaultTagId) => {
 
-    this.setState({ defaultTagId, page: 0 },
+  switchTag = (defaultTagId) => {
+    this.setState({ defaultTagId, page: 0 }, () => {
       this.state.defaultTagId === 0 ?
-        () => this.props.getBlogGenerals(this.state.page, (isScrollOver) => {
+        this.props.getBlogGenerals(this.state.page, (isScrollOver) => {
           this.setState({ isLoading: false, page: this.state.page + 1, isScrollOver })
         })
         :
-        () => this.props.getBlogGeneralsByTagId(defaultTagId))
+        this.props.getBlogGeneralsByTagId(defaultTagId)
+    })
+
   }
+
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll.bind(this));
   }
+
   hasTaglistChange(scrollTop) {
     if (this.state.tagsListStyleChange && scrollTop < 40) {
       this.setState({ tagsListStyleChange: false })
@@ -49,6 +52,9 @@ class BlogIndex extends React.Component {
   }
 
   handleScroll(event) {
+    if (this.state.defaultTagId !== 0) {
+      return;
+    }
     let scrollTop = window.scrollY
     this.hasTaglistChange(scrollTop)
 
