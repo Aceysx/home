@@ -36,8 +36,9 @@ class BlogDetail extends React.Component {
             renderers={{ code: CodeBlock }} />
         </div>
         <ReactDisqusThread
+          style={{ marginTop: 50 }}
           shortname="acey"
-          identifier={id}
+          identifier={"acey-unique" + blog.id}
           title={blog.title}
           onNewComment={() => { }} />
       </Paper>
