@@ -28,9 +28,10 @@ class BlogDetail extends React.Component {
         client_secret: '6fffb464940c58190d47473adca198f7bbcf3435',
       },
     })
-    gitment.init()
+    gitment.init(()=>{
+      gitment.renderComments('discuss')
+    })
     gitment.render('discuss')
-    gitment.update()
   }
 
   render() {
