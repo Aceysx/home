@@ -23,7 +23,7 @@ class BlogDetail extends React.Component {
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
     const gitment = new Gitment({
-      id: 'Aceysx-' + urlParams.id,
+      id: 'Aceysx--home--' + urlParams.id,
       owner: 'Aceysx',
       repo: 'home',
       oauth: {
@@ -32,7 +32,7 @@ class BlogDetail extends React.Component {
       },
     })
 
-    gitment.init().then(() => gitment.render('discuss'))
+    gitment.render('discuss')
   }
 
   render() {
