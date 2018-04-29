@@ -13,28 +13,28 @@ import CodeBlock from '../common/markdown/code-block'
 import ReactDisqusThread from 'react-disqus-thread'
 import 'gitment/style/default.css'
 import Gitment from 'gitment'
+const gitment = new Gitment({
+  owner: 'Aceysx',
+  repo: 'home',
+  oauth: {
+    client_id: '84cd4e71f1f04f24b27e',
+    client_secret: '6fffb464940c58190d47473adca198f7bbcf3435',
+  },
+})
 
 class BlogDetail extends React.Component {
   componentDidMount() {
     const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
-    const gitment = new Gitment({
-      id: 'aceysx-' + urlParams.id,
-      owner: 'Aceysx',
-      repo: 'home',
-      oauth: {
-        client_id: '84cd4e71f1f04f24b27e',
-        client_secret: '6fffb464940c58190d47473adca198f7bbcf3435',
-      },
-    })
-    gitment.init(()=>{
-      gitment.renderComments('discuss')
-    })
+  
+    gitment.init()
     gitment.render('discuss')
   }
 
   render() {
+    gitment.renderComments('discuss')
+
     const blog = this.props.blog
     const tags = blog.tags.map((tag, index) => <Tag key={index} {...tag} />)
     const id = `smilingleo/${window.location.pathname}`;
