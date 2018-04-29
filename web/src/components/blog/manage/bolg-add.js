@@ -31,6 +31,7 @@ class BlogAdd extends React.Component {
     } else {
       tags = tags.filter(tag => tag !== value)
     }
+    console.log(tags)
     this.setState({ tags })
   };
 

@@ -16,7 +16,7 @@ public class Tag {
     private Date time;
     private String bgColor;
     @JsonIgnoreProperties(value = { "tags" })
-    @ManyToMany(mappedBy = "tags",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "tags",cascade = CascadeType.MERGE)
     private List<Blog> blogs;
 
     public List<Blog> getBlogs() {

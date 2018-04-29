@@ -82,7 +82,7 @@ class BlogIndex extends React.Component {
         <Header title='最新更新' />
         <div style={{ display: 'block' }}>
           <div ref={node => this.contentNode = node}
-            style={{ marginLeft: '-100', width: '90%' }}>
+            style={{ marginLeft: '-100px', width: '90%' }}>
             {blogGenerals}
           </div>
 

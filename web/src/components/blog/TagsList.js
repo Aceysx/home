@@ -14,7 +14,7 @@ export default class TagsList extends React.Component {
       if (!item.id) {
         return
       }
-      return <span style={{ display: 'inline-block', height: 30 }}
+      return <span key={item.id} style={{ display: 'inline-block', height: 30 }}
         onClick={() => this.props.switchTag(item.id)}>
 
         <Tag bgColor={defaultTagId === item.id ? selectedBgColor : item.bgColor}
