@@ -25,13 +25,12 @@ const gitment = new Gitment({
 class BlogDetail extends React.Component {
   constructor(){
     super()
-    gitment.init()
   }
   componentDidMount() {
     const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
-  
+    gitment.init().then(()=>console.log(213123))
     gitment.render('discuss')
   }
 
