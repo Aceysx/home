@@ -23,18 +23,19 @@ const gitment = new Gitment({
 })
 
 class BlogDetail extends React.Component {
+  constructor(){
+    super()
+    gitment.init()
+  }
   componentDidMount() {
     const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
   
-    gitment.init()
     gitment.render('discuss')
   }
 
   render() {
-    gitment.renderComments('discuss')
-
     const blog = this.props.blog
     const tags = blog.tags.map((tag, index) => <Tag key={index} {...tag} />)
     const id = `smilingleo/${window.location.pathname}`;
