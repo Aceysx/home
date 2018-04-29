@@ -10,7 +10,6 @@ import '../../constant/css/blog/blog-detail.css'
 import LinearProgress from 'material-ui/es/Progress/LinearProgress'
 import Tag from '../common/blog/Tag'
 import CodeBlock from '../common/markdown/code-block'
-import ReactDisqusThread from 'react-disqus-thread'
 import 'gitment/style/default.css'
 import Gitment from 'gitment'
 
