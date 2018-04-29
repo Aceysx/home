@@ -10,6 +10,7 @@ import '../../constant/css/blog/blog-detail.css'
 import LinearProgress from 'material-ui/es/Progress/LinearProgress'
 import Tag from '../common/blog/Tag'
 import CodeBlock from '../common/markdown/code-block'
+import ReactDisqusThread from 'react-disqus-thread'
 
 class BlogDetail extends React.Component {
   componentDidMount() {
@@ -21,10 +22,9 @@ class BlogDetail extends React.Component {
   render() {
     const blog = this.props.blog
     const tags = blog.tags.map((tag, index) => <Tag key={index} {...tag} />)
-
+    const id = `smilingleo/${window.location.pathname}`;
     return <div className='bg-color'>
       <PreBar />
-
       <Paper className='bg-color-white blog-content'>
         <h1 style={{ fontSize: 40 }}>{blog.title}</h1>
         <p className='blog-detail-time'>{new Date(blog.time).toDateString()}</p>
@@ -35,7 +35,13 @@ class BlogDetail extends React.Component {
           <ReactMarkdown source={blog.content} escapeHtml={false}
             renderers={{ code: CodeBlock }} />
         </div>
+        <ReactDisqusThread
+          shortname="acey"
+          identifier={id}
+          title={blog.title}
+          onNewComment={() => { }} />
       </Paper>
+
     </div>
   }
 }
