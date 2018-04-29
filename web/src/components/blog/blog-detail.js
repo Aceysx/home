@@ -11,12 +11,25 @@ import LinearProgress from 'material-ui/es/Progress/LinearProgress'
 import Tag from '../common/blog/Tag'
 import CodeBlock from '../common/markdown/code-block'
 import ReactDisqusThread from 'react-disqus-thread'
+import 'gitment/style/default.css'
+import Gitment from 'gitment'
 
 class BlogDetail extends React.Component {
   componentDidMount() {
     const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
+    const gitment = new Gitment({
+      id: 'aceysx-' + urlParams.id,
+      owner: 'Aceysx',
+      repo: 'home',
+      oauth: {
+        client_id: '84cd4e71f1f04f24b27e',
+        client_secret: '6fffb464940c58190d47473adca198f7bbcf3435',
+      },
+    })
+    gitment.render('discuss')
+
   }
 
   render() {
@@ -35,14 +48,9 @@ class BlogDetail extends React.Component {
           <ReactMarkdown source={blog.content} escapeHtml={false}
             renderers={{ code: CodeBlock }} />
         </div>
-        <ReactDisqusThread
-          style={{ marginTop: 50 }}
-          shortname="acey"
-          identifier={"acey-unique" + blog.id}
-          title={blog.title}
-          onNewComment={() => { }} />
-      </Paper>
 
+        <div id='discuss' />
+      </Paper>
     </div>
   }
 }
