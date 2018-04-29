@@ -29,6 +29,7 @@ class BlogDetail extends React.Component {
       },
     })
     gitment.render('discuss')
+    gitment.init()
 
   }
 
