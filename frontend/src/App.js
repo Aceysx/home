@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Index from './components/index'
 import {Route, HashRouter as Router} from 'react-router-dom'
-
+  
 
 class App extends Component {
   render () {

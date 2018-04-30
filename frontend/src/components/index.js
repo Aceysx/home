@@ -1,9 +1,15 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import BlogIndex from './blog/index'
 
 class Index extends React.Component {
   render () {
-   return <div>ad</div>
+  
+    return (
+      <div>
+        <BlogIndex/>
+      </div>
+    )
   }
 }
 
