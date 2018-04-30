@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as BlogActions from '../../actions/blog'
-import { Card, Icon, Avatar, Tag,BackTop } from 'antd';
+import { Card, Icon, Avatar, Tag, BackTop } from 'antd';
 import '../../css/blog-index.css'
 import parseTime from '../common/date-util'
 const { Meta } = Card
@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
       const tags = item.tags.map(tag =>
         <Tag className='blog-tag' color={tag.bgColor}>
           <Icon type="tags" />
-          { tag.content}</Tag>)
+          {tag.content}</Tag>)
       return <div><h2 className='classify-tag'>哈h</h2><Card
         className='blog-card'
         cover={<img className='blog-img' src={item.headImg} />}
@@ -43,12 +43,12 @@ class BlogIndex extends React.Component {
           description={item.content ? item.content.substring(0, 50) + ' ...' : ''}
         />
       </Card>
-      <BackTop />
       </div>
     })
     return (
       <div className='blog-cotainer'>
         {blogsList}
+        <BackTop />
       </div>
     )
   }
