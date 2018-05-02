@@ -7,7 +7,8 @@ class Header extends React.Component {
     super(props)
     this.state = {
       collapsed: false,
-      collapsedIcon: this.state.collapsed ? 'menu-fold' : 'menu-unfold'
+      collapsedIcon:  'menu-unfold'
+      // 'menu-fold' :
     }
   }
   render() {
