@@ -27,8 +27,8 @@ class BlogDetail extends React.Component {
       owner: 'Aceysx',
       repo: 'home',
       oauth: {
-        client_id: '84cd4e71f1f04f24b27e',
-        client_secret: '6fffb464940c58190d47473adca198f7bbcf3435',
+        client_id: '8bdaa2a52877bcb47364',
+        client_secret: '49e107a62c3830d596d94d7715161f3a4cf1dcce',
       },
     })
 
@@ -69,7 +69,7 @@ class BlogDetail extends React.Component {
           </Card>
         </Col>
         <Col xs={{ span: 0 }} lg={{ span: 4 }}>
-          mulu
+          {/* mulu */}
         </Col>
       </Row>
 
