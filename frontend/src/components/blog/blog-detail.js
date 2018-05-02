@@ -4,14 +4,15 @@ import UrlPattern from 'url-pattern'
 import * as BlogActions from '../../actions/blog'
 import { connect } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
-import PreBar from '../common/pre-bar'
-import Paper from 'material-ui/es/Paper/Paper'
+import { Row, Col, Card, Icon, Avatar, Tag, BackTop } from 'antd';
+import IndexHeader from '../common/blog/header'
 import '../../constant/css/blog/blog-detail.css'
-import LinearProgress from 'material-ui/es/Progress/LinearProgress'
-import Tag from '../common/blog/Tag'
+import '../../css/makdown.css'
 import CodeBlock from '../common/markdown/code-block'
 import 'gitment/style/default.css'
 import Gitment from 'gitment'
+import parseTime from '../common/date-util'
+const { Meta } = Card
 
 class BlogDetail extends React.Component {
   constructor() {
@@ -36,23 +37,41 @@ class BlogDetail extends React.Component {
 
   render() {
     const blog = this.props.blog
-    const tags = blog.tags.map((tag, index) => <Tag key={index} {...tag} />)
-    const id = `smilingleo/${window.location.pathname}`;
-    return <div className='bg-color'>
-      <PreBar />
-      <Paper className='bg-color-white blog-content'>
-        <h1 style={{ fontSize: 40 }}>{blog.title}</h1>
-        <p className='blog-detail-time'>{new Date(blog.time).toDateString()}</p>
-        <p>{tags}</p>
-        <p><LinearProgress mode='buffer' value={100} /></p>
-        <div className='markdown'>
+    const tags = blog.tags.map((tag, index) =>
+      <Tag key={index} className='blog-tag' color={tag.bgColor}>
+        <Icon type="tags" />
+        {tag.content}
+      </Tag>
+    )
+    return <div>
+      <IndexHeader isBack />
+      <Row type='flex' justify='center'>
+        <Col span={15}>
+          <Card
+            className='blog-card'
+            cover={<img className='blog-img' src={blog.headImg} />}
+          >
+            <Meta
+              className='blog-img-desc'
+              title={blog.title}
+              description={<span className='blog-time'>
+                <Icon type="schedule" />{parseTime(blog.time)}</span>}
+            />
+            {tags}
 
-          <ReactMarkdown source={blog.content} escapeHtml={false}
-            renderers={{ code: CodeBlock }} />
-        </div>
+            <div className='markdown'>
+              <ReactMarkdown source={blog.content} escapeHtml={false}
+                renderers={{ code: CodeBlock }} />
+            </div>
+            <hr />
+            <div id='discuss' />
+          </Card>
+        </Col>
+        <Col span={4}>
+          mulu
+        </Col>
+      </Row>
 
-        <div id='discuss' />
-      </Paper>
     </div>
   }
 }

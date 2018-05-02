@@ -1,0 +1,113 @@
+.markdown{
+    font-family: "Comic Sans MS","Helvetica Neue","Microsoft Yahei",-apple-system,sans-serif!important;
+    line-height: 30px!important;
+}
+.markdown img{
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 2px
+}
+.markdown hr{
+    border: dashed #efefef 3px;
+    margin: 10px
+}
+
+.markdown h1{
+    font-size: 190%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown h2{
+    font-size: 170%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown h3{
+    font-size: 150%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown h4{
+    font-size: 130%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown h5{
+    font-size: 120%;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown h6,.markdown strong{
+    font-size: 110%;
+    font-weight: 700;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1)
+}
+.markdown blockquote{
+    padding:15px 0 1px 14px;
+    border-left: 5px solid #81D4FA;
+    color: #8b9597;
+    border-radius: 0 2px 2px 0;
+    background: #E1F5FE;
+    line-height: 20px
+}
+.markdown p code{
+    padding: 3px 5px;
+    border: 1px solid #e9e9e9;
+    border-radius: 2px;
+    color: #706f6f;
+    text-shadow: 0 0 1px #cacaca;
+    font-weight: bold;
+    line-height: 1;
+}
+.markdown pre code{
+    padding: 10px;
+    letter-spacing: 1px!important;
+    line-height: 25px!important;
+    border: 1px solid #e9e9e9;
+    border-radius: 2px;
+    color: #706f6f;
+    line-height: 1;
+}
+.markdown p a{
+    font-size: 120%;
+    text-shadow: 0 0 1px #cacaca;
+}
+ol,ul{
+    margin:-3%;
+    position: relative;
+}
+li{
+    list-style: none;
+}
+ol{
+  counter-reset:li;
+}
+.markdown ol>li:before, .markdown ul>li:before{
+    position: relative;
+    color:#698dbc;
+    top:0;
+    left: 0;
+    text-align: center
+}
+.markdown ol>li:before{
+    counter-increment: li;
+    content: counter(li) ".   ";
+    font-size: 1em
+}
+.markdown ol>li:hover:before,.markdown ol>li:hover:before{
+    font-size: 1.2em;
+    left: -5px;
+    transition: all .4s
+}
+
+.markdown ul>li:before{
+    content:"-> ";
+    color: #59e9a2;
+    font-size: 1em
+}
+.markdown ul>li:hover:before{
+    left: -10px;
+    font-weight: bold;
+    transition: all .4s;
+}

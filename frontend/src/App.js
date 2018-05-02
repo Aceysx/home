@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Index from './components/index'
 import {Route, HashRouter as Router} from 'react-router-dom'
-  
+import BlogDetail from './components/blog/blog-detail'
 
 class App extends Component {
   render () {
@@ -13,8 +13,8 @@ class App extends Component {
           <Route exact path='/manage/blogs' component={BlogAdd} />
           <Route exact path='/manage/blogs/:id' component={BlogUpdate} />
           <Route exact path='/manage/tags' component={TagAdd} />
+          {/* <Route exact path='/time' component={TimeIndex} /> */}
           <Route exact path='/blogs/:id' component={BlogDetail} />
-          <Route exact path='/time' component={TimeIndex} /> */}
         </div>
       </Router>
     )
