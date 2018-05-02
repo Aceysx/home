@@ -46,7 +46,7 @@ class BlogDetail extends React.Component {
     return <div>
       <IndexHeader isBack />
       <Row type='flex' justify='center'>
-        <Col span={15}>
+        <Col xs={{ span: 24 }} lg={{ span: 15 }}>
           <Card
             className='blog-card'
             cover={<img className='blog-img' src={blog.headImg} />}
@@ -57,8 +57,9 @@ class BlogDetail extends React.Component {
               description={<span className='blog-time'>
                 <Icon type="schedule" />{parseTime(blog.time)}</span>}
             />
-            {tags}
-
+            <div style={{marginBottom:20}}>
+              {tags}
+            </div>
             <div className='markdown'>
               <ReactMarkdown source={blog.content} escapeHtml={false}
                 renderers={{ code: CodeBlock }} />
@@ -67,7 +68,7 @@ class BlogDetail extends React.Component {
             <div id='discuss' />
           </Card>
         </Col>
-        <Col span={4}>
+        <Col xs={{ span: 0 }} lg={{ span: 4 }}>
           mulu
         </Col>
       </Row>

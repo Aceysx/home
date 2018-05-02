@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a89fdb-72bc-40e6-8834-b0ae88e01808" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/blog/blog-general.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/blog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/blog/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
