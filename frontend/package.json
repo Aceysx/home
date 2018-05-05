@@ -17,7 +17,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:8080",
+      "target": "http://localhost:8086",
       "secure": false,
       "changeOrigin": true
     }
@@ -26,7 +26,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && mkdir -p ../backend/src/main/resources/static/ && rm -rf ../backend/src/main/resources/static/ && cp -R ./build/ ../backend/src/main/resources/static/"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.0",
