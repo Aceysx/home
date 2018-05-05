@@ -23,6 +23,7 @@ class BlogIndex extends React.Component {
           <Icon type="tags" />
           {tag.content}</Tag>)
       return <Row type="flex" justify='center'>
+      <Col span={1}/>
         <Col xs={{ span: 23 }} lg={{ span: 15 }}>
           <h2 className='classify-tag'>哈h</h2>
           <Link to={'./blogs/' + item.id}>

@@ -46,7 +46,7 @@ class BlogDetail extends React.Component {
     return <div>
       <IndexHeader isBack />
       <Row type='flex' justify='center'>
-        <Col xs={{ span: 24 }} lg={{ span: 15 }}>
+        <Col xs={{ span: 24 }} lg={{ span: 14 }}>
           <Card
             className='blog-card'
             cover={<img className='blog-img' src={blog.headImg} />}
@@ -67,9 +67,6 @@ class BlogDetail extends React.Component {
             <hr />
             <div id='discuss' />
           </Card>
-        </Col>
-        <Col xs={{ span: 0 }} lg={{ span: 4 }}>
-          {/* mulu */}
         </Col>
       </Row>
 
