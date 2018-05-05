@@ -4,7 +4,7 @@ services:
       image: java:8
       container_name: homeBackend
       ports:
-        - 8080:8080
+        - 80:8080
       volumes:
         - ./backend:/home/app/backend
       command: sh -c "cd /home/app/backend && ./gradlew build && java -jar build/libs/backend.jar"
@@ -17,7 +17,7 @@ services:
       image: node:8-alpine
       container_name: homeWeb
       ports:
-        - "80:3000"
+        - "8080:3000"
       volumes:
         - ./web:/home/app
       command: sh -c "cd /home/app && npm i && npm start"
