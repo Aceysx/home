@@ -14,7 +14,7 @@
 }
 @media (max-width: 768px) {
     .waifu {
-        display: none;
+        /* display: none; */
     }
 }
 .waifu-tips {
