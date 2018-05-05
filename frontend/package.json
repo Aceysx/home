@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && mkdir -p ../backend/src/main/resources/static/ && rm -rf ../backend/src/main/resources/static/ && cp -R ./build/ ../backend/src/main/resources/static/"
+    "deploy": "npm i && npm run build && mkdir -p ../backend/src/main/resources/static/ && rm -rf ../backend/src/main/resources/static/ && cp -R ./build/ ../backend/src/main/resources/static/"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.0",
