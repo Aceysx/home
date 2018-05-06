@@ -2,8 +2,9 @@ import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as BlogActions from '../../actions/blog'
-import { Row, Col, Card, Icon, Avatar, Tag, BackTop } from 'antd';
+import { Row, Col, Card, Icon, Avatar, Tag, BackTop, Carousel } from 'antd';
 import '../../css/blog-index.css'
+import Information from '../common/information'
 import parseTime from '../common/date-util'
 const { Meta } = Card
 
@@ -22,10 +23,10 @@ class BlogIndex extends React.Component {
         <Tag className='blog-tag' color={tag.bgColor}>
           <Icon type="tags" />
           {tag.content}</Tag>)
+
       return <Row type="flex" justify='center'>
-      <Col span={1}/>
-        <Col xs={{ span: 23 }} lg={{ span: 15 }}>
-          <h2 className='classify-tag'>哈h</h2>
+        <Col xs={{ span: 23 }} lg={{ span: 15, offset: 1 }}>
+          {/* <h2 className='classify-tag'>哈h</h2> */}
           <Link to={'./blogs/' + item.id}>
             <Card
               className='blog-card'
@@ -41,7 +42,6 @@ class BlogIndex extends React.Component {
                 className='blog-meta'
                 avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                 title={tags}
-                description={item.content ? item.content.substring(0, 50) + ' ...' : ''}
               />
             </Card>
           </Link>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon, Menu, Layout } from 'antd'
 import '../../../css/header.css'
+import Imformation from '../information'
 const { Header, Sider, Content } = Layout;
 
 class IndexHeader extends React.Component {
@@ -12,23 +13,17 @@ class IndexHeader extends React.Component {
     }
   }
   render() {
-    let header_style = {
-      height: '400px',
-      background: 'rgb(33, 150, 243,.95)',
-      position: 'absoult',
-      margin: '0 0 -12% 0'
-    }
+   
     let header_style_top = {
-      position: 'fixed',
       height: '50px',
       width: '100%',
       top: 0,
       background: 'rgb(33, 150, 243)'
     }
 
-    return <div style={header_style}>
+    return <div>
       <div style={header_style_top}>
-        {this.props.isBack ?
+        {/* {this.props.isBack ?
           <Icon className='header-icon header-icon-open'
             type="arrow-left"
             onClick={() => window.history.back()} /> :
@@ -38,10 +33,11 @@ class IndexHeader extends React.Component {
               collapsedIcon: this.state.collapsed ? 'menu-fold' : 'menu-unfold',
               collapsed: this.state.collapsed
             })} />
-        }
+        } */}
 
         <Icon className='header-icon header-icon-search' type="search" />
       </div>
+      <Imformation/>
     </div>
   }
 }
