@@ -13,8 +13,9 @@
     
 }
 .blog-img-desc{
+    left: 0;
+    bottom: 76px;
     position: absolute;
-    margin:-105px 0 0 -24px!important;
     width: 100%;
     height: 80px;
     background: rgba(0, 0, 0, 0.7);
