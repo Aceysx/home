@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card,Avatar,Row,Col} from 'antd'
+import head_img from '../../constant/images/head.jpeg'
 const { Meta } = Card
 let header_style = {
     height: '350px',
@@ -14,7 +15,7 @@ export default class Information extends React.Component {
             <Row type="flex" justify='center'>
                 <Col>
                     <Avatar className='head_img'
-                     src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                     src={head_img} />
                 </Col>
                 </Row>
             </div>

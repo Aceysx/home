@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as BlogActions from '../../actions/blog'
 import { Row, Col, Card, Icon, Avatar, Tag, BackTop, Carousel } from 'antd';
 import '../../css/blog-index.css'
+import headImage from '../../constant/images/head.jpeg'
 import Information from '../common/information'
 import parseTime from '../common/date-util'
 const { Meta } = Card
@@ -11,10 +12,28 @@ const { Meta } = Card
 class BlogIndex extends React.Component {
   constructor() {
     super()
-
+    this.state = {
+      currentPage: 0,
+      totalPage: 1
+    }
   }
   componentDidMount() {
-    this.props.getBlogGenerals(1, () => { })
+    this.getBlogGenerals(this.state.currentPage)
+  }
+  prePage = () => {
+    let { currentPage } = this.state
+    this.getBlogGenerals(--currentPage)
+  }
+
+  getBlogGenerals = (currentPage) => {
+    this.props.getBlogGenerals(currentPage, (data) => {
+      this.setState({ currentPage, totalPage: data.totalPages })
+    })
+  }
+
+  nextPage = () => {
+    let { currentPage } = this.state
+    this.getBlogGenerals(++currentPage)
   }
 
   render() {
@@ -40,7 +59,7 @@ class BlogIndex extends React.Component {
               />
               <Meta
                 className='blog-meta'
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                avatar={<Avatar src={headImage} />}
                 title={tags}
               />
             </Card>
@@ -51,8 +70,25 @@ class BlogIndex extends React.Component {
     return (
       <div>
         {blogsList}
+        <Row type="flex" justify='center'>
+          <Col xs={{ span: 23 }} lg={{ span: 15, offset: 1 }}>
+            {this.state.currentPage <= 0 ? ''
+              :
+              <a className='pre-page turn-page' onClick={this.prePage}>
+                <span><Icon type="double-left" /></span>
+                Pre
+             </a>
+            }
+            {this.state.currentPage >= this.state.totalPage - 1 ? ''
+              :
+              < a className='next-page turn-page' onClick={this.nextPage}> Next
+            <span><Icon type="double-right" /></span>
+              </a>
+            }
+          </Col>
+        </Row>
         <BackTop />
-      </div>
+      </div >
     )
   }
 }

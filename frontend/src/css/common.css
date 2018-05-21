@@ -1,3 +1,4 @@
+
 .classify-tag{
     position: absolute;
     display: inline-block;
@@ -27,3 +28,70 @@
     border-left: 0 solid transparent;
     content: ""
 }
+.turn-page{
+    position: absolute;
+    text-align: center;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius:6px;
+    box-shadow: 0 1px 5px 1px #d0cbcb, inset 0 2px 10px 1px #ccc8c8;
+    font-size: 15px !important;
+    color: #666565;
+    opacity: .8;
+    margin-bottom: 50px
+}
+.next-page{
+    right: 10px;
+}
+.pre-page{
+    left: 10px;
+}
+.turn-page span{
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 2.5px
+}
+.next-page:hover span{
+    animation: next-rotation 1s infinite linear;
+}
+.pre-page:hover span{
+    animation: pre-rotation 1s infinite linear;
+}
+
+@keyframes next-rotation{
+    25%{
+        padding-left: 2.5px;
+        color: gray
+    }
+    50%{
+        padding-left: 5;
+        color: ghostwhite
+    }
+    75%{
+        padding-left: -2.5px;
+        color: gray
+    }
+    100%{
+        padding-left: -5px;
+        color: ghostwhite
+    }
+}
+@keyframes pre-rotation{
+    25%{
+        padding-right: 2.5px;
+        color: gray
+    }
+    50%{
+        padding-right: 5;
+        color: ghostwhite
+    }
+    75%{
+        padding-right: -2.5px;
+        color: gray
+    }
+    100%{
+        padding-right: -5px;
+        color: ghostwhite
+    }
+}
+ 

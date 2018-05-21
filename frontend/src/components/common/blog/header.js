@@ -1,7 +1,7 @@
 import React from 'react'
 import { Icon, Menu, Layout } from 'antd'
 import '../../../css/header.css'
-import Imformation from '../information'
+import Information from '../information'
 const { Header, Sider, Content } = Layout;
 
 class IndexHeader extends React.Component {
@@ -37,7 +37,7 @@ class IndexHeader extends React.Component {
 
         <Icon className='header-icon header-icon-search' type="search" />
       </div>
-      <Imformation/>
+      <Information/>
     </div>
   }
 }

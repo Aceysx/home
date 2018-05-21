@@ -28,7 +28,7 @@ public class BlogController {
     public ResponseEntity getBlogs(@RequestParam(value = "page", defaultValue = "0") Integer page,
                                    @RequestParam(value = "size", defaultValue = "5") Integer size) {
         Sort sort = new Sort(Sort.Direction.DESC, "time");
-        Pageable pageable = new PageRequest(0, size * (page + 1), sort);
+        Pageable pageable = new PageRequest(page, size * (page + 1), sort);
         Page<Blog> blogs = blogRepository.findAll(pageable);
         return new ResponseEntity(blogs, HttpStatus.OK);
     }

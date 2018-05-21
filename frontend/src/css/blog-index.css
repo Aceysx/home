@@ -52,18 +52,18 @@
     background: #00B0FF!important;
     box-shadow: 0 0 2px 3px rgba(255,255,255,0.7), 0 0 30px 8px #f6f6f6
 }
-.head_img img{
-    height: 40px!important;
-    width: 40px!important;
-    margin: 0 auto;
-}
 .head_img img:hover{
-    height: 500%!important;
-    width: 500%!important;
-    margin: -50px 0 0 -5px;
-    transition: ease-in 10s
+    animation: rotatefresh 10s  linear ;
 }
 .head_img:hover{
     box-shadow: 0 0 2px 3px rgba(255,255,255,0.7), 0 0 50px 10px #f6f6f6
+}
 
+@keyframes rotatefresh {
+    0% {
+       -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(3);
+     }
 }

@@ -20,7 +20,7 @@ export const getBlogGenerals = (page,callback) => {
     (async () => {
       const res = await request.get(`./api/blogs?page=` + page)
       if (res.status === HTTP_CODE.OK) {
-        callback(res.body.content.length === res.body.totalElements)
+        callback(res.body)
         dispatch(refreshBlogGenerals(res.body.content))
       }
     })()
