@@ -13,7 +13,7 @@ class IndexHeader extends React.Component {
     }
   }
   render() {
-   
+
     let header_style_top = {
       height: '50px',
       width: '100%',
@@ -23,21 +23,22 @@ class IndexHeader extends React.Component {
 
     return <div>
       <div style={header_style_top}>
-        {/* {this.props.isBack ?
+        {this.props.isBack ?
           <Icon className='header-icon header-icon-open'
             type="arrow-left"
             onClick={() => window.history.back()} /> :
-          <Icon className='header-icon header-icon-open'
-            type={this.state.collapsedIcon}
-            onClick={() => this.setState({
-              collapsedIcon: this.state.collapsed ? 'menu-fold' : 'menu-unfold',
-              collapsed: this.state.collapsed
-            })} />
-        } */}
+          ''
+          // <Icon className='header-icon header-icon-open'
+          //   type={this.state.collapsedIcon}
+          //   onClick={() => this.setState({
+          //     collapsedIcon: this.state.collapsed ? 'menu-fold' : 'menu-unfold',
+          //     collapsed: this.state.collapsed
+          //   })} />
+        }
 
         <Icon className='header-icon header-icon-search' type="search" />
       </div>
-      <Information/>
+      <Information />
     </div>
   }
 }
