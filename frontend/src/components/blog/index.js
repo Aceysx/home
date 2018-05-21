@@ -87,7 +87,9 @@ class BlogIndex extends React.Component {
             }
           </Col>
         </Row>
-        <BackTop />
+        <div className='gototop'>
+        <BackTop className='toTop'/>
+        </div>
       </div >
     )
   }
