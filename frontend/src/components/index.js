@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import BlogIndex from './blog/index'
 import { Icon } from 'antd'
 import Header from './common/blog/header'
+import Footer from './common/footer';
 
 class Index extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Index extends React.Component {
       <div>
         <Header />
         <BlogIndex />
+        <Footer/>
       </div>
     )
   }
