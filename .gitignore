@@ -10,6 +10,7 @@ web/node_modules
 .gradle
 build
 # testing
+.idea
 /coverage
 *.xml
 .idea/*
