@@ -20,12 +20,9 @@
     left: 0;
     width: 0;
     height: 0;
-    border-top: 0 solid transparent;
-    border-right-width: 1em;
-    border-right-style: solid;
-    border-right-color: inherit;
-    border-bottom: 1em solid transparent;
-    border-left: 0 solid transparent;
+    border: 0 solid transparent;
+    border-right: 1em inherit;
+    border-bottom-width: 1em;
     content: ""
 }
 .turn-page{

@@ -26,7 +26,6 @@ export const get = async (url) => {
     const body = await res.json()
     const status = res.status
     return Object.assign({}, {body}, {status})
-
   } catch (ex) {
     return {status: ex.status}
   }

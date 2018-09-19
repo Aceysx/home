@@ -1,6 +1,0 @@
-export const BLUE = '#2196f3'
-export const WHITE = 'white'
-export const BLACK = 'black'
-export const PINK = '#ff4081'
-export const YELLOW = '#FDD835'
-export const GREP = '#e0e0e0'
