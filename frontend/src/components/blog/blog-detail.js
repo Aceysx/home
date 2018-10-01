@@ -1,24 +1,23 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import UrlPattern from 'url-pattern'
 import * as BlogActions from '../../actions/blog'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import ReactMarkdown from 'react-markdown'
-import { Row, Col, Card, Icon, Avatar, Tag, BackTop } from 'antd';
+import {Card, Col, Icon, Row, Tag} from 'antd'
 import IndexHeader from '../common/blog/header'
-import '../../constant/css/blog/blog-detail.css'
-import '../../css/makdown.css'
+import '../../css/blog/blog-detail.css'
+import '../../css/common/markdown.css'
 import CodeBlock from '../common/markdown/code-block'
 import 'gitment/style/default.css'
 import Gitment from 'gitment'
 import parseTime from '../common/date-util'
+
 const { Meta } = Card
 
 class BlogDetail extends React.Component {
-  constructor() {
-    super()
-  }
-  componentDidMount() {
+
+  componentDidMount () {
     const pattern = new UrlPattern('/blogs/:id')
     const urlParams = pattern.match(this.props.location.pathname) || {}
     this.props.getBlog(urlParams.id)
@@ -28,18 +27,18 @@ class BlogDetail extends React.Component {
       repo: 'home',
       oauth: {
         client_id: '8bdaa2a52877bcb47364',
-        client_secret: '49e107a62c3830d596d94d7715161f3a4cf1dcce',
-      },
+        client_secret: '49e107a62c3830d596d94d7715161f3a4cf1dcce'
+      }
     })
 
     gitment.render('discuss')
   }
 
-  render() {
+  render () {
     const blog = this.props.blog
     const tags = blog.tags.map((tag, index) =>
       <Tag key={index} className='blog-tag' color={tag.bgColor}>
-        <Icon type="tags" />
+        <Icon type='tags' />
         {tag.content}
       </Tag>
     )
@@ -55,9 +54,9 @@ class BlogDetail extends React.Component {
               className='blog-img-desc'
               title={blog.title}
               description={<span className='blog-time'>
-                <Icon type="schedule" />{parseTime(blog.time)}</span>}
+                <Icon type='schedule' />{parseTime(blog.time)}</span>}
             />
-            <div style={{marginBottom:20}}>
+            <div style={{marginBottom: 20}}>
               {tags}
             </div>
             <div className='markdown'>

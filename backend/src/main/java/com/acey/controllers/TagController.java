@@ -1,7 +1,6 @@
 package com.acey.controllers;
 
 
-import com.acey.entities.Blog;
 import com.acey.entities.Tag;
 import com.acey.repositories.BlogRepository;
 import com.acey.repositories.TagRepository;
@@ -18,8 +17,6 @@ import java.util.List;
 public class TagController {
     @Autowired
     private TagRepository tagRepository;
-    @Autowired
-    private BlogRepository blogRepository;
 
     @GetMapping("/tags")
     public ResponseEntity getTags() {

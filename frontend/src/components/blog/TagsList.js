@@ -1,13 +1,10 @@
-import React from 'react';
-import { AppBar, Button, Toolbar, Typography } from "material-ui/es/index";
+import React from 'react'
+import {AppBar, Button, Toolbar, Typography} from 'material-ui/es/index'
 import * as Color from '../../constant/color'
-import MenuIcon from 'material-ui-icons/Menu'
 import Tag from '../common/blog/Tag'
-import Badge from 'material-ui/Badge';
 
 export default class TagsList extends React.Component {
-
-  render() {
+  render () {
     const defaultTagId = this.props.defaultTagId
     const selectedBgColor = '#8D6E63'
     const tagsList = this.props.tags.map(item => {

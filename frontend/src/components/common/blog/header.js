@@ -1,19 +1,17 @@
 import React from 'react'
-import { Icon, Menu, Layout } from 'antd'
-import '../../../css/header.css'
+import {Icon} from 'antd'
+import '../../../css/layout/header.css'
 import Information from '../information'
-const { Header, Sider, Content } = Layout;
 
 class IndexHeader extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       collapsed: false,
       collapsedIcon: 'menu-unfold'
     }
   }
-  render() {
-
+  render () {
     let header_style_top = {
       height: '50px',
       width: '100%',
@@ -23,11 +21,11 @@ class IndexHeader extends React.Component {
 
     return <div>
       <div style={header_style_top}>
-        {this.props.isBack ?
-          <Icon className='header-icon header-icon-open'
-            type="arrow-left"
-            onClick={() => window.history.back()} /> :
-          ''
+        {this.props.isBack
+          ? <Icon className='header-icon header-icon-open'
+            type='arrow-left'
+            onClick={() => window.history.back()} />
+          : ''
           // <Icon className='header-icon header-icon-open'
           //   type={this.state.collapsedIcon}
           //   onClick={() => this.setState({
@@ -36,7 +34,7 @@ class IndexHeader extends React.Component {
           //   })} />
         }
 
-        <Icon className='header-icon header-icon-search' type="search" />
+        <Icon className='header-icon header-icon-search' type='search' />
       </div>
       <Information />
     </div>

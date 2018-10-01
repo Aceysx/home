@@ -45,17 +45,17 @@
     display: block;
     width: 100%;
 }
-.head_img{
+.profile__headImg{
     height: 50px!important;
     width: 50px!important;
     border-radius: 50%!important;
     background: #00B0FF!important;
     box-shadow: 0 0 2px 3px rgba(255,255,255,0.7), 0 0 30px 8px #f6f6f6
 }
-.head_img img:hover{
+.profile__headImg img:hover{
     animation: rotatefresh 10s  linear ;
 }
-.head_img:hover{
+.profile__headImg:hover{
     box-shadow: 0 0 2px 3px rgba(255,255,255,0.7), 0 0 50px 10px #f6f6f6
 }
 

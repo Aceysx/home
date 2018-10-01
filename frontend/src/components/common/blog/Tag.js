@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../constant/css/common.css'
+import '../../../css/common/common.css'
 
 const Tag = (props) => {
   return <span key={props.id}

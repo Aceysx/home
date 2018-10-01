@@ -21,10 +21,8 @@ public class BlogController {
 
     @Autowired
     private BlogRepository blogRepository;
-    @Autowired
-    private TagRepository tagRepository;
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity getBlogs(@RequestParam(value = "page", defaultValue = "0") Integer page,
                                    @RequestParam(value = "size", defaultValue = "5") Integer size) {
         Sort sort = new Sort(Sort.Direction.DESC, "time");
@@ -40,7 +38,7 @@ public class BlogController {
         return new ResponseEntity(blog, HttpStatus.OK);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity addBlog(@RequestBody Blog blog) {
         blog.setTime(new Date());
         blogRepository.save(blog);
@@ -52,9 +50,4 @@ public class BlogController {
         blogRepository.save(blog);
         return new ResponseEntity(HttpStatus.CREATED);
     }
-
-//    @GetMapping("/{id}")
-//    public ResponseEntity getBlogsByTagId(@PathVariable Long id) {
-//        return new ResponseEntity(blogRepository.findBlogsByTagId(id), HttpStatus.OK);
-//    }
 }

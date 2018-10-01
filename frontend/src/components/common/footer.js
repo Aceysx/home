@@ -1,5 +1,6 @@
 import React from 'react'
-import { Icon, Menu, Layout } from 'antd'
+import {Layout} from 'antd'
+
 const { Header, Sider, Content } = Layout;
 
 class Footer extends React.Component {
