@@ -6,7 +6,7 @@ services:
       ports:
         - 80:80
       volumes:
-        - ./default:/etc/nginx/conf.d/default.conf
+        - ./:/etc/nginx/conf.d/
       command: sh -c "cd /home/app/backend && ./gradlew build && java -jar build/libs/backend.jar"
       networks:
         main:
