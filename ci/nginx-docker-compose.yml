@@ -1,6 +1,6 @@
 version: '2'
 services:
-  homeBackend:
+  nginx:
       image: nginx:1.13-alpine
       container_name: nginx
       ports:
