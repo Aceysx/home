@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as BlogActions from '../../../actions/blog'
 import Tag from '../../common/blog/Tag'
-import {Input} from "material-ui/es/index";
+import {Input} from 'material-ui/es/index'
 
 class TagAdd extends React.Component {
   constructor () {

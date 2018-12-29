@@ -1,14 +1,11 @@
 import React from 'react'
 import {Layout} from 'antd'
 
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
 
+  render () {
     let header_style_top = {
       height: '150px',
       width: '100%',
@@ -17,11 +14,11 @@ class Footer extends React.Component {
       textAlign: 'center'
     }
     let text = {
-      fontSize:'14px',
+      fontSize: '14px',
       fontWeight: 'bold',
       lineHeight: '150px',
-      color:'white',
-      letterSpacing:'2px'
+      color: 'white',
+      letterSpacing: '2px'
 
     }
     return <div style={header_style_top}>
