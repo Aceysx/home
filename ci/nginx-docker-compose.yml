@@ -7,7 +7,6 @@ services:
         - 80:80
       volumes:
         - ./:/etc/nginx/conf.d/
-      command: sh -c "cd /home/app/backend && ./gradlew build && java -jar build/libs/backend.jar"
       networks:
         main:
           aliases:
