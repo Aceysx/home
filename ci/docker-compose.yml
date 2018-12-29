@@ -2,9 +2,9 @@ version: '2'
 services:
   homeBackend:
       image: java:8
-      container_name: homeBackend
+      container_name: xin_homeBackend
       ports:
-        - 80:8080
+        - 8088:8080
       volumes:
         - ./backend:/home/app/backend
       command: sh -c "cd /home/app/backend && ./gradlew build && java -jar build/libs/backend.jar"
@@ -15,9 +15,9 @@ services:
   
   homeWeb:
       image: node:8-alpine
-      container_name: homeWeb
+      container_name: xin_homeWeb
       ports:
-        - "8080:3000"
+        - 3000:3000
       volumes:
         - ./web:/home/app
       command: sh -c "cd /home/app && npm i && npm start"
