@@ -19,7 +19,7 @@ services:
       ports:
         - 3000:3000
       volumes:
-        - ./web:/home/app
+        - ./frontend:/home/app
       command: sh -c "cd /home/app && npm i && npm start"
       links:
         - homeBackend
