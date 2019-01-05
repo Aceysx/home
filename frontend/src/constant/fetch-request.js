@@ -2,7 +2,6 @@ import HTTP_METHOD from './http-method'
 
 async function errHandler (res) {
   const body = await res.json()
-  alert(body.message)
   return {status: res.status}
 }
 
