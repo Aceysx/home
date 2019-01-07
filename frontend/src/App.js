@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import Index from './components/index'
 import {Route, HashRouter as Router} from 'react-router-dom'
 import BlogDetail from './components/blog/blog-detail'
-
+import Quadrant from './components/quadrant/quadrant-body'
 class App extends Component {
   render () {
     return (
       <Router>
-        <div>
+        <div style={{height: '100%'}}>
           <Route exact path='/' component={Index} />
+          <Route exact path='/quadrants' component={Quadrant} />
           {/* <Route exact path='/blogs' component={BlogIndex} />
           <Route exact path='/manage/blogs' component={BlogAdd} />
           <Route exact path='/manage/blogs/:id' component={BlogUpdate} />
