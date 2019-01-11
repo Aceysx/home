@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.4.4",
+    "antd": "^3.12.1",
     "gitment": "0.0.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

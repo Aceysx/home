@@ -4,7 +4,6 @@ export const getAll = () => {
 }
 
 export const save = (quadrant) => {
-  console.log(quadrant)
   let quadrants = window.localStorage.getItem('quadrants')
   if (quadrants) {
     quadrants = JSON.parse(quadrants)
